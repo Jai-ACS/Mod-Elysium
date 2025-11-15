@@ -1,9 +1,9 @@
-local MakeMeHappy = GameMain:NewMod("MakeMeHappy")
+local MakeMeHappy = GameMain:GetMod("MakeMeHappy")
 local count = 0
 local count1 = 0
 local SaveData = {}
 
-local BridgeMod = GameMain:GetMod("Jai_MobileHotkeyBridge")
+local Adapter = GameMain:GetMod("Jai_HotkeyAdapter")
 
 function MakeMeHappy:OnInit()
     SaveData = SaveData or {}
@@ -21,50 +21,25 @@ function MakeMeHappy:OnInit()
 	
 	
 	-- Added by Jai
-	BridgeMod:register("Elysium", "Open UI",
+	Adapter:register("Elysium", "Open UI",
 		function()
 			local MMHWindow = self:GetMMHWindow()
 			MMHWindow:Show()
 		end
 	)
-	BridgeMod:register("Elysium", "One-Click Change Talisman",
+	Adapter:register("Elysium", "One-Click Change Talisman",
 		function()
 			local MMHWindow = self:GetMMHWindow()
 			MMHWindow:Show()
 			MMHWindow:ChangeFu()
 		end
 	)
-	BridgeMod:register("Elysium", "One-Click Put Item",
+	Adapter:register("Elysium", "One-Click Put Item",
 		function()
 			local PutItemWindow = self:GetPutItemWindow()
 			PutItemWindow:Show()
 		end
 	)
-	
-	BridgeMod:register("Test2", "Test",
-		function()
-		end
-	)
-	BridgeMod:register("Test3", "Test",
-		function()
-		end
-	)
-	BridgeMod:register("Test4", "Test",
-		function()
-		end
-	)
-	BridgeMod:register("Test5", "Test",
-		function()
-		end
-	)
-	BridgeMod:register("Test6", "Test",
-		function()
-		end
-	)
-end
-
-function MakeMeHappy:OnEnter()
-
 end
 
 function MakeMeHappy:OnSetHotKey()
@@ -191,3 +166,4 @@ end
 function MakeMeHappy:GetPutItemWindow()
     return GameMain:GetMod("Windows"):GetWindow("MakeMeHappy_PutItemWindow")
 end
+
