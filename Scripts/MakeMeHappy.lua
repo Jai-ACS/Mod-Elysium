@@ -21,20 +21,20 @@ function MakeMeHappy:OnInit()
 	
 	
 	-- Added by Jai
-	Adapter:register("Elysium", "Open UI",
+	Adapter:register("XT("极乐世界")", XT("修炼界面"),
 		function()
 			local MMHWindow = self:GetMMHWindow()
 			MMHWindow:Show()
 		end
 	)
-	Adapter:register("Elysium", "One-Click Change Talisman",
+	Adapter:register("XT("极乐世界")", XT("一键换符"),
 		function()
 			local MMHWindow = self:GetMMHWindow()
 			MMHWindow:Show()
 			MMHWindow:ChangeFu()
 		end
 	)
-	Adapter:register("Elysium", "One-Click Put Item",
+	Adapter:register("XT("极乐世界")", XT("一键放置"),
 		function()
 			local PutItemWindow = self:GetPutItemWindow()
 			PutItemWindow:Show()
@@ -45,19 +45,19 @@ end
 function MakeMeHappy:OnSetHotKey()
     local tbHotKeys = {{
         ID = "MakeMeHappy",
-        Name = "极乐世界",
+        Name = "XT("极乐世界")",
         Type = "Mod",
         InitialKey1 = "LeftShift + E",
         InitialKey2 = "RightShift + E"
     }, {
         ID = "MakeMeHappy_ChangeFu",
-        Name = "极乐世界（一键换符）",
+        Name = XT("极乐世界") .. XT("（一键换符）"),
         Type = "Mod",
         InitialKey1 = "LeftShift + R",
         InitialKey2 = "RightShift + R"
     }, {
         ID = "MakeMeHappy_SetPutItem",
-        Name = "极乐世界（一键放置）",
+        Name = "XT("极乐世界") .. XT("（一键放置）"),
         Type = "Mod",
         InitialKey1 = "LeftShift + T",
         InitialKey2 = "RightShift + T"
@@ -166,4 +166,5 @@ end
 function MakeMeHappy:GetPutItemWindow()
     return GameMain:GetMod("Windows"):GetWindow("MakeMeHappy_PutItemWindow")
 end
+
 
