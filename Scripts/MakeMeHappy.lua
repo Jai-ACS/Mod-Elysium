@@ -21,20 +21,20 @@ function MakeMeHappy:OnInit()
 	
 	
 	-- Added by Jai
-	Adapter:register("XT("极乐世界")", XT("修炼界面"),
+	Adapter:register(XT("极乐世界"), XT("修炼界面"),
 		function()
 			local MMHWindow = self:GetMMHWindow()
 			MMHWindow:Show()
 		end
 	)
-	Adapter:register("XT("极乐世界")", XT("一键换符"),
+	Adapter:register(XT("极乐世界"), XT("一键换符"),
 		function()
 			local MMHWindow = self:GetMMHWindow()
 			MMHWindow:Show()
 			MMHWindow:ChangeFu()
 		end
 	)
-	Adapter:register("XT("极乐世界")", XT("一键放置"),
+	Adapter:register(XT("极乐世界"), XT("一键放置"),
 		function()
 			local PutItemWindow = self:GetPutItemWindow()
 			PutItemWindow:Show()
@@ -45,7 +45,7 @@ end
 function MakeMeHappy:OnSetHotKey()
     local tbHotKeys = {{
         ID = "MakeMeHappy",
-        Name = "XT("极乐世界")",
+        Name = XT("极乐世界"),
         Type = "Mod",
         InitialKey1 = "LeftShift + E",
         InitialKey2 = "RightShift + E"
@@ -57,7 +57,7 @@ function MakeMeHappy:OnSetHotKey()
         InitialKey2 = "RightShift + R"
     }, {
         ID = "MakeMeHappy_SetPutItem",
-        Name = "XT("极乐世界") .. XT("（一键放置）"),
+        Name = XT("极乐世界") .. XT("（一键放置）"),
         Type = "Mod",
         InitialKey1 = "LeftShift + T",
         InitialKey2 = "RightShift + T"
@@ -166,5 +166,6 @@ end
 function MakeMeHappy:GetPutItemWindow()
     return GameMain:GetMod("Windows"):GetWindow("MakeMeHappy_PutItemWindow")
 end
+
 
 
