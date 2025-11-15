@@ -1,0 +1,5 @@
+Key	Value
+极乐世界	Elysium
+修炼界面	Cultivation UI
+一键换符	One-Click Change Talisman
+一键放置	One-Click Put Item
