@@ -6,7 +6,7 @@ function MakeMeHappy_PutItemWindow:OnInit()
     self.window.contentPane = UIPackage.CreateObject("MMHWindow", "SetPutItemWindow")
     self.window.closeButton = self:GetChild("frame"):GetChild("n5")
     self:GetChild("frame"):GetChild("title").text = XT("极乐世界（一键放置）")
-    self:GetChild("explain").text = XT("*功能说明") .. XT("（重要）")
+    self:GetChild("explain").text = XT("*功能说明") .. "\r\n" .. XT("（重要）")
     self:GetChild("explain").tooltips = 
         XT("【重要说明】") .. "\r\n" ..
         XT("[color=#FF0000]请不要设置常用的置物台作为一键放置的置物台，注意看下面的【摆放原理】，确定理解了再设置，以免发生不幸事件[/color]") .. "\r\n" ..
