@@ -1,5 +1,6 @@
 Key	Value
 极乐世界	Elysium
+打开面板	Open Panel
 面板	Panel
 一键换符	One-Click Change Talisman
 一键放置	One-Click Placement
