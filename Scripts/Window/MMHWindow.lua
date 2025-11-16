@@ -86,19 +86,22 @@ function MakeMeHappy_Window:OnShowUpdate()
 	local max = self:GetChild("maxvalue")
 
 	-- contentPane:GetChild("author").text = "By: Lazy Fusky\nTranslated by: Kanna~Chan"
-	contentPane:GetChild("n34").text = "<"
-	contentPane:GetChild("n35").text = "Pr / Tr"
-	contentPane:GetChild("n36").text = ">"
-	contentPane:GetChild("n37").text = "Mind"
-	contentPane:GetChild("n54").text = "Tier"
-	contentPane:GetChild("n56").text = "Power"
-	contentPane:GetChildAt(19).text = "Guide"
-	contentPane:GetChildAt(19).tooltips = "The function will not activate until checked!\r\nIf the rank is less than or equal to the setting, the magic weapon with power less than or equal to the setting will be automatically returned, regardless of whether the magic weapon is disabled or not.\n\rThe magic weapon with the name of the maker will not be returned!"
+	contentPane:GetChild("n34").text = XT("低于")
+	contentPane:GetChild("n35").text = XT("调心")
+	contentPane:GetChild("n36").text = XT("高于")
+	contentPane:GetChild("n37").text = XT("修炼")
+	contentPane:GetChild("n54").text = XT("品阶")
+	contentPane:GetChild("n56").text = XT("威力")
+	contentPane:GetChildAt(19).text = XT("说明")
+	contentPane:GetChildAt(19).tooltips =
+		XT("前面勾选后功能才会生效。") .. "\r\n" ..
+		XT("品阶低于或等于设置，而且威力低于或等于设置的法宝将会自动归阵，无论法宝是否被禁用。") .. "\r\n" ..
+		XT("有制作者名字的法宝不会被归阵。")
 
-	zhiliao.text = "SpiritHeal"
-	zhiliao.tooltips = "Automatically treats Qi derivations;\nPanacea skill required"
-	fabaoguizhen.text = "Collect Arti"
-	fabaoguizhen.tooltips = "Automatically collect artifact to the Sword Shield"
+	zhiliao.text = XT("自动治疗真气溢伤")
+	zhiliao.tooltips = XT("自动治疗有“灵”标志的伤，需要通脉散。")
+	fabaoguizhen.text = XT("法宝自动归阵")
+	fabaoguizhen.tooltips = XT("自动将法宝归阵。")
 
 	-- min:SetScale(0.75, 0.75)
 	-- max:SetScale(0.75, 0.75)
@@ -125,25 +128,25 @@ function MakeMeHappy_Window:OnShowUpdate()
 		local xiulian = Item:GetChild("xiulian")
 		local moshi = Item:GetChild("moshi")
 		
-		qingxin.text = "Purity"
-		qingxin.tooltips = "Purity Pill\nConsumption of the Purity Pill will calm one's Mental State to a certain extent, and reduces the fluctuation of mood within [color=#ff0000]1 day[/color]."
+		qingxin.text = XT("清心丹")
+		qingxin.tooltips = XT("服用清心丹能暂时提升心境以及提高心境稳定程度[color=#ff0000]1日[/color]。")
 
-		jile.text = "Euph"
-		jile.tooltips = "Euphoria Pill\nConsumption of the Euphoria Pill will immerse one in happiness within [color=#ff0000]2 days[/color], but it greatly hinders work efficiency."
+		jile.text = XT("极乐丹")
+		jile.tooltips = XT("服用极乐丹能让弟子沉浸在欢乐中，持续[color=#ff0000]2天[/color]，但会减低工作效率。")
 
-		lingshi.text = "SS"
-		lingshi.tooltips = "Spirit Stones"
+		lingshi.text = XT("灵石")
+		lingshi.tooltips = XT("能够[color=#0000ff]提升10%基本修炼速度[/color]，持续[color=#ff0000]3日[/color]。")
 
-		lingjing.text = "SC"
-		lingjing.tooltips = "Spirit Crystals"
+		lingjing.text = XT("灵晶")
+		lingjing.tooltips = XT("能够[color=#0000ff]提升20%基本修炼速度[/color]，持续[color=#ff0000]15日[/color]。")
 
-		huangya.text = "SP"
-		huangya.tooltips = "Sprout Pill\nPill made from Crimson Fruit, it is capable of boosting [color=#0000ff]Cultivation Speed by 30%[/color]. Lasts [color=#ff0000]24 hours[/color]."
+		huangya.text = XT("黄芽丹")
+		huangya.tooltips = XT("以朱果炼制而成的丹药，能够[color=#0000ff]提升30%修炼速度[/color]，持续[color=#ff0000]1日[/color]。")
 
-		xiulian.text = "Practice Only"
-		xiulian.tooltips = "If checked, the character will automatically consume selected elixir(s) only while they're practicing."
+		xiulian.text = XT("仅修行时使用")
+		xiulian.tooltips = XT("选后弟子会仅在修行时自动服用选定的消耗品。")
 
-		moshi.tooltips = "Default\r\nPractice-Mind\r\nTrain-Mind"
+		moshi.tooltips = XT("默认模式") .. "\r\n" .. XT("自动修行调心") .. "\r\n" .. XT("自动练功调心")
 	end
 end
 
@@ -179,7 +182,7 @@ function MakeMeHappy_Window:OnShown() -- 显示窗口时
 			local huangya = Item:GetChild("huangya")
 			local xiulian = Item:GetChild("xiulian")
 			local moshi = Item:GetChild("moshi") -- 模式0=默认, 模式1=修行调心, 模式2=练功调心
-			moshi.items = {"Default", "Train / Mind", "Train / Mind"}
+			moshi.items = {XT("默认模式"), XT("自动修行调心"), XT("自动练功调心")}
 
 			if Npc.Rank ~= g_emNpcRank.Disciple then
 				lingshi.visible = false
