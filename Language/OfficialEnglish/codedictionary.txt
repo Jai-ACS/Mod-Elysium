@@ -65,4 +65,5 @@ MOD会寻找地图上所有你设置的这种材料的置物台，然后摆上�
 MOD一共内置五套方案，各自独立，对应五行聚灵阵。[color=#FF0000]这个MOD主要是为了手动灵气爆发而设计，不适合精细摆放。[/color]能正常解放双手，但不要做太骚的操作，可能会有BUG。	MOD has provided 5 sets of programs, each program independent of each other, corresponding to the five elements of cultivation arrays. [color=#FF0000]This MOD feature is designed mainly for Manual Qi Burst, not suitable for fine placement.[/color] Able to free up your hands, but don't do anything too flashy, for bugs may occur.
 [color=#FF0000]只能摆放可堆叠的物品。[/color]	[color=#FF0000]Only stackable items are placeable.[/color]
 方案名可以自定义。	The program names are customizable.
+方案	Program
 未设置	Not Set
