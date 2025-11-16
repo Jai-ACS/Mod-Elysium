@@ -40,6 +40,12 @@ function MakeMeHappy:OnInit()
 			PutItemWindow:Show()
 		end
 	)
+	Adapter:register(XT("极乐世界"), XT("开/关心境符管理"),
+		function()
+			local MMHWindow = self:GetMMHWindow()
+			MMHWindow:ToggleMindFromFu()
+		end
+	)
 end
 
 function MakeMeHappy:OnSetHotKey()
@@ -61,6 +67,12 @@ function MakeMeHappy:OnSetHotKey()
         Type = "Mod",
         InitialKey1 = "LeftShift + T",
         InitialKey2 = "RightShift + T"
+    }, {
+        ID = "MakeMeHappy_ToggleMindFromFu",
+        Name = XT("极乐世界") .. XT("（开/关心境符管理）"),
+        Type = "Mod",
+        InitialKey1 = "LeftShift + Y",
+        InitialKey2 = "RightShift + Y"
     }}
     return tbHotKeys
 end
@@ -86,6 +98,10 @@ function MakeMeHappy:OnHotKey(ID, State)
 		else
 			PutItemWindow:Show()
 		end
+    end
+	if ID == "MakeMeHappy_ToggleMindFromFu" and State == "down" then
+        local MMHWindow = self:GetMMHWindow()
+        MMHWindow:ToggleMindFromFu()
     end
 end
 
@@ -159,13 +175,32 @@ function MakeMeHappy:OnLoad(tbLoad)
     PutItemWindow:SetPlan(SaveData.MakeMeHappy_Plan)
 end
 
+-- function MakeMeHappy:GetMMHWindow()
+--     return GameMain:GetMod("Windows"):GetWindow("MakeMeHappy_Window")
+-- end
+
+-- function MakeMeHappy:GetPutItemWindow()
+--     return GameMain:GetMod("Windows"):GetWindow("MakeMeHappy_PutItemWindow")
+-- end
+
+-- Seriously, I'm not sure if we need to use loops like this for potential race condition
+-- And I'm not even sure if things are loaded synchronously - if so then this would also block the other file from loading
 function MakeMeHappy:GetMMHWindow()
-    return GameMain:GetMod("Windows"):GetWindow("MakeMeHappy_Window")
+	local window = GameMain:GetMod("Windows"):GetWindow("MakeMeHappy_Window")
+	repeat
+		window = GameMain:GetMod("Windows"):GetWindow("MakeMeHappy_Window")
+	until window
+	return window
 end
 
 function MakeMeHappy:GetPutItemWindow()
-    return GameMain:GetMod("Windows"):GetWindow("MakeMeHappy_PutItemWindow")
+	local window = GameMain:GetMod("Windows"):GetWindow("MakeMeHappy_PutItemWindow")
+	repeat
+		window = GameMain:GetMod("Windows"):GetWindow("MakeMeHappy_PutItemWindow")
+	until window
+	return window
 end
+
 
 
 
