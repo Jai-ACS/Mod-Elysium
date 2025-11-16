@@ -4,7 +4,6 @@ Key	Value
 一键换符	One-Click Change Talisman
 一键放置	One-Click Placement
 开/关心境符管理  Toggle automatic management of Mental State talisman
-
 【默认快捷键说明】	Default Hotkey Explanation
 面板：	Panel:
 一键换符：	One-Click Change Talisman:
@@ -21,8 +20,6 @@ Key	Value
 注：MOD提供的符箓可能不会生效。	Note: May not work on custom talisman from MODs.
 自动模式下会打断部分操作	Operations may be interrupted in automatic mode
 手动控制NPC时请先恢复默认	Revert the cultivator to "Default" mode before manually controlling them
-
-
 清心丹	Purity
 服用清心丹能暂时提升心境以及提高心境稳定程度[color=#ff0000]1日[/color]。	Purity Pill\r\nConsumption of the Purity Pill will calm one's Mental State to a certain extent, and reduces the fluctuation of mood within [color=#ff0000]1 day[/color].
 极乐丹	Eupho
@@ -52,8 +49,5 @@ Key	Value
 有制作者名字的法宝不会被归阵。	The magic weapon with the name of the maker will not be returned!
 自动治疗真气溢伤	Spirit-Heal
 自动治疗有“灵”标志的伤，需要通脉散。	Automatically treats injuries with "Spirit" tag, requires Spirit Powder.
-
-
-
 开	On
 关	Off
