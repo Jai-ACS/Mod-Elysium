@@ -22,15 +22,15 @@ Key	Value
 自动模式下会打断部分操作	Operations may be interrupted in automatic mode
 手动控制NPC时请先恢复默认	Revert the cultivator to "Default" mode before manually controlling them
 清心丹	Purity
-服用清心丹能暂时提升心境以及提高心境稳定程度[color=#ff0000]1日[/color]。	Purity Pill\r\nConsumption of the Purity Pill will calm one's Mental State to a certain extent, and reduces the fluctuation of mood within [color=#ff0000]1 day[/color].
+服用清心丹能暂时提升心境以及提高心境稳定程度[color=#ff0000]1日[/color]。	Purity Pill\nConsumption of the Purity Pill will calm one's Mental State to a certain extent, and reduces the fluctuation of mood within [color=#ff0000]1 day[/color].
 极乐丹	Eupho
-服用极乐丹能让弟子沉浸在欢乐中，持续[color=#ff0000]2天[/color]，但会减低工作效率。	Euphoria Pill\r\nConsumption of the Euphoria Pill will immerse one in happiness within [color=#ff0000]2 days[/color], but it greatly hinders work efficiency.
+服用极乐丹能让弟子沉浸在欢乐中，持续[color=#ff0000]2天[/color]，但会减低工作效率。	Euphoria Pill\nConsumption of the Euphoria Pill will immerse one in happiness within [color=#ff0000]2 days[/color], but it greatly hinders work efficiency.
 灵石	SS
-能够[color=#0000ff]提升10%基本修炼速度[/color]，持续[color=#ff0000]3日[/color]。	Spirit Crystal\r\nBoosts [color=#0000ff]base Cultivation Speed by 10%[/color], lasting [color=#ff0000]3 days[/color].
+能够[color=#0000ff]提升10%基本修炼速度[/color]，持续[color=#ff0000]3日[/color]。	Spirit Crystal\nBoosts [color=#0000ff]base Cultivation Speed by 10%[/color], lasting [color=#ff0000]3 days[/color].
 灵晶	SC
-能够[color=#0000ff]提升20%基本修炼速度[/color]，持续[color=#ff0000]15日[/color]。	Spirit Crystal\r\nBoosts [color=#0000ff]base Cultivation Speed by 20%[/color], lasting [color=#ff0000]15 days[/color].
+能够[color=#0000ff]提升20%基本修炼速度[/color]，持续[color=#ff0000]15日[/color]。	Spirit Crystal\nBoosts [color=#0000ff]base Cultivation Speed by 20%[/color], lasting [color=#ff0000]15 days[/color].
 黄芽丹	Sprout
-以朱果炼制而成的丹药，能够[color=#0000ff]提升30%修炼速度[/color]，持续[color=#ff0000]1日[/color]。	Sprout Pill\r\nPill made from Crimson Fruit, it is capable of boosting [color=#0000ff]Cultivation Speed by 30%[/color], lasting [color=#ff0000]24 hours[/color].
+以朱果炼制而成的丹药，能够[color=#0000ff]提升30%修炼速度[/color]，持续[color=#ff0000]1日[/color]。	Sprout Pill\nPill made from Crimson Fruit, it is capable of boosting [color=#0000ff]Cultivation Speed by 30%[/color], lasting [color=#ff0000]24 hours[/color].
 仅修行时使用	Practice Only
 选后弟子会仅在修行时自动服用选定的消耗品。	If checked, the character will automatically consume selected consumable item(s) only while they're practicing.
 默认模式	Default
