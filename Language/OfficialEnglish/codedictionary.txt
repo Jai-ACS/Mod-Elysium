@@ -66,4 +66,8 @@ MOD一共内置五套方案，各自独立，对应五行聚灵阵。[color=#FF0
 [color=#FF0000]只能摆放可堆叠的物品。[/color]	[color=#FF0000]Only stackable items are placeable.[/color]
 方案名可以自定义。	The program names are customizable.
 方案	Program
+设置置物台	Set Display
+设置摆放物	Set Item
+全部放置	Place All
+全部丢下	Remove All
 未设置	Not Set
