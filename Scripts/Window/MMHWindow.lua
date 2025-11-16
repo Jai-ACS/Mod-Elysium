@@ -711,6 +711,8 @@ function MakeMeHappy_Window:IsValidNpc(Npc) -- 检测NPC可用性
 	-- if Npc.PropertyMgr.Practice.GongStateLevel == CS.XiaWorld.g_emGongStageLevel.God2 then
 	-- return false
 	-- end
+	
+	local Enum = CS.XiaWorld
 	if not Npc.IsValid or Npc.IsDeath or Npc.IsPuppet or Npc.IsZombie or Npc.IsVistor or Npc.IsWaiMen then
 		return false
 	elseif Npc.GongKind == Enum.g_emGongKind.Body or Npc.GongKind == Enum.g_emGongKind.God then
