@@ -1,5 +1,27 @@
 Key	Value
 极乐世界	Elysium
-修炼界面	Cultivation UI
+面板	Panel
 一键换符	One-Click Change Talisman
-一键放置	One-Click Put Item
+一键放置	One-Click Placement
+
+
+【默认快捷键说明】	Default Hotkey Explanation
+面板：	Panel:
+一键换符：	One-Click Change Talisman:
+一键放置：	One-Click Placement:
+开/关自动心境符管理：	Toggle automatic management of Mental State talisman
+【丹药设置说明】	Elixir Setting Explanation
+自动食用选中的丹药，药效过后会自动接续。	Auto-eat selected elixir, redoing when the elixir's effects wear off.
+选中仅修行时使用，NPC只会在修行时自动食用选中的丹药。	If [Practice Only] is selected, selected elixirs will only be used when the character is practicing.
+【修行模式设置说明】	Cultivation Mode Setting Explanation
+心境低于设定时开始“调心”，高于设定时开始“修/练”。	When Mental State falls below the set value, cultivation mode will be set to "Mind"; when Mental State rises above the set value, cultivation mode will be set to "Practice" or "Train".
+【自动心境符管理】[状态：%s]	Automatic management of Mental State talisman [Status: %s]
+开启时，进入调心状态自动关闭影响心境的符箓，反之亦然。同时，心境值计算时会自动扣除正在使用的符箓。	Upon turning on, talismans affecting Mental State will be automatically unequipped when cultivation mode is changed to "Mind" and equipped when cultivation mode is changed to "Practice" or "Train". Additionally, MOD will automatically deduct Mental State from talismans for calculation.
+例：设符箓A为+5心境、B为+1，心境最低值设为40；则46心境时进入调心状态，并关闭符箓。	Example: <Not translated yet>
+注：MOD提供的符箓可能不会生效。	Note: May not work on custom talisman from MODs.
+自动模式下会打断部分操作	Operations may be interrupted in automatic mode
+手动控制NPC时请先恢复默认	Revert the cultivator to "Default" mode before manually controlling them
+
+
+开	On
+关	Off
