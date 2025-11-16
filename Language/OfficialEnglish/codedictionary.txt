@@ -52,8 +52,8 @@ Key	Value
 自动治疗有“灵”标志的伤，需要通脉散。	Automatically treats injuries with "Spirit" tag, requires Spirit Powder.
 开	On
 关	Off
-极乐世界（一键放置）  Elysium (One-Click Placement)
-（重要）	 (Important)
+极乐世界（一键放置）	Elysium (One-Click Placement)
+（重要）	(Important)
 【重要说明】	[Important Note]
 [color=#FF0000]请不要设置常用的置物台作为一键放置的置物台，注意看下面的【摆放原理】，确定理解了再设置，以免发生不幸事件。[/color]	[color=#FF0000]Please do not set a common type of display for One-Click Placement function, take note of the below mentioned [Placement Principle], make sure you understand the principle before using the placement feature, in order to prevent any possible unfortunate incident.[/color]
 【设置说明】	[Instructions]
