@@ -5,8 +5,20 @@ local Plan = {}
 function MakeMeHappy_PutItemWindow:OnInit()
     self.window.contentPane = UIPackage.CreateObject("MMHWindow", "SetPutItemWindow")
     self.window.closeButton = self:GetChild("frame"):GetChild("n5")
-    self:GetChild("frame"):GetChild("title").text = "极乐世界（一键放置）"
-    self:GetChild("explain").tooltips = "【重要说明】\r\n[color=#FF0000]请不要设置常用的置物台作为一键放置的置物台，注意看下面的【摆放原理】，确定理解了再设置，以免发生不幸事件[/color]\r\n【设置说明】\r\n先选择某种材料置物台，点击设置置物台，看到MOD面板上出现置物台名称则设置成功。摆放物也是同样设置方法。\r\n【摆放原理】\r\nMOD会寻找地图上所有你设置的这种材料的置物台，然后摆上你设置要摆的物品。比如你设置了铁置物台摆放灵木，那么全图所有铁置物台上都会被摆上灵木。所以不要将聚灵阵里常用材料的置物台设置为MOD一键摆放的置物台，建议造一些不常用材料的置物台，比如灰石、大理石之类，专门用作MOD的一键摆放。\r\n【其他说明】\r\nMOD一共内置五套方案，各自独立，对应五行聚灵阵。[color=#FF0000]这个MOD主要是为了手动灵气爆发而设计，不适合精细摆放。[/color]能正常解放双手，但不要做太骚的操作，可能会有BUG。\r\n[color=#FF0000]只能摆放可堆叠的物品。[/color]\r\n方案名可以自定义。"
+    self:GetChild("frame"):GetChild("title").text = XT("极乐世界（一键放置）")
+    self:GetChild("explain").text = XT("*功能说明") .. XT("（重要）")
+    self:GetChild("explain").tooltips = 
+        XT("【重要说明】") .. "\r\n" ..
+        XT("[color=#FF0000]请不要设置常用的置物台作为一键放置的置物台，注意看下面的【摆放原理】，确定理解了再设置，以免发生不幸事件[/color]") .. "\r\n" ..
+        XT("【设置说明】") .. "\r\n" ..
+        XT("先选择某种材料置物台，点击设置置物台，看到MOD面板上出现置物台名称则设置成功。摆放物也是同样设置方法。") .. "\r\n" ..
+        XT("【摆放原理】") .. "\r\n" .. 
+        XT("MOD会寻找地图上所有你设置的这种材料的置物台，然后摆上你设置要摆的物品。比如你设置了铁置物台摆放灵木，那么全图所有铁置物台上都会被摆上灵木。") ..
+        XT("所以不要将聚灵阵里常用材料的置物台设置为MOD一键摆放的置物台，建议造一些不常用材料的置物台，比如灰石、大理石之类，专门用作MOD的一键摆放。") .. "\r\n" ..
+        XT("【其他说明】") .. "\r\n" .. 
+        XT("MOD一共内置五套方案，各自独立，对应五行聚灵阵。[color=#FF0000]这个MOD主要是为了手动灵气爆发而设计，不适合精细摆放。[/color]能正常解放双手，但不要做太骚的操作，可能会有BUG。") .. "\r\n" ..
+        XT("[color=#FF0000]只能摆放可堆叠的物品。[/color]") .. "\r\n" ..
+        XT("方案名可以自定义。")
     self.list = self:GetChild("list")
     self.window:Center()
     self.list:RemoveChildrenToPool()
@@ -18,7 +30,7 @@ function MakeMeHappy_PutItemWindow:OnInit()
 
         tempPlan.setshelfbtn = listItem:GetChild("setshelf")
         tempPlan.shelftext = listItem:GetChild("shelftext")
-        tempPlan.shelftext.text = Plan[i].shelftext or "未设置"
+        tempPlan.shelftext.text = Plan[i].shelftext or XT("未设置")
         tempPlan.setshelfbtn.onClick:Add(function(context)
             local thing = CS.XiaWorld.UILogicMode_Select.Instance.CurSelectThing
             if thing ~= nil then
@@ -31,7 +43,7 @@ function MakeMeHappy_PutItemWindow:OnInit()
 
         tempPlan.setitembtn = listItem:GetChild("setitem")
         tempPlan.itemtext = listItem:GetChild("itemtext")
-        tempPlan.itemtext.text = Plan[i].itemtext or "未设置"
+        tempPlan.itemtext.text = Plan[i].itemtext or XT("未设置")
         tempPlan.setitembtn.onClick:Add(function(context)
             local thing = CS.XiaWorld.UILogicMode_Select.Instance.CurSelectThing
             if thing ~= nil then
@@ -45,7 +57,7 @@ function MakeMeHappy_PutItemWindow:OnInit()
 
         tempPlan.putallbtn = listItem:GetChild("putall")
         tempPlan.putallbtn.onClick:Add(function(context)
-            if Plan[i].shelftext == "未设置" or Plan[i].itemtext == "未设置" then
+            if Plan[i].shelftext == XT("未设置") or Plan[i].itemtext == XT("未设置") then
             else
                 local list = Map.Things:FindBuildingForTag("ItemShelf")
 
@@ -64,7 +76,7 @@ function MakeMeHappy_PutItemWindow:OnInit()
 
         tempPlan.dropallbtn = listItem:GetChild("dropall")
         tempPlan.dropallbtn.onClick:Add(function(context)
-            if Plan[i].shelftext == "未设置" or Plan[i].itemtext == "未设置" then
+            if Plan[i].shelftext == XT("未设置") or Plan[i].itemtext == XT("未设置") then
             else
                 local list = Map.Things:FindBuildingForTag("ItemShelf")
                 for _, shelf in pairs(list) do
