@@ -21,7 +21,7 @@ function MakeMeHappy:OnInit()
 	
 	
 	-- Added by Jai
-	Adapter:register(XT("极乐世界"), XT("修炼界面"),
+	Adapter:register(XT("极乐世界"), XT("打开面板"),
 		function()
 			local MMHWindow = self:GetMMHWindow()
 			MMHWindow:Show()
@@ -43,6 +43,7 @@ function MakeMeHappy:OnInit()
 	Adapter:register(XT("极乐世界"), XT("开/关心境符管理"),
 		function()
 			local MMHWindow = self:GetMMHWindow()
+			MMHWindow:Show()
 			MMHWindow:ToggleMindFromFu()
 		end
 	)
@@ -200,6 +201,7 @@ function MakeMeHappy:GetPutItemWindow()
 	until window
 	return window
 end
+
 
 
 
