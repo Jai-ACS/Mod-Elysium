@@ -11,7 +11,7 @@ Key	Value
 一键放置：	One-Click Placement:
 开/关自动心境符管理：	Toggle automatic management of Mental State talisman:
 【丹药设置说明】	Elixir Setting Explanation
-自动食用选中的丹药，药效过后会自动接续。	Auto-eat selected elixir, redoing when the elixir's effects wear off.
+自动食用选中的丹药，药效过后会自动接续。	Auto-consume selected consumable item(s), redoing when the elixir's effects wear off.
 选中仅修行时使用，NPC只会在修行时自动食用选中的丹药。	If [Practice Only] is selected, selected elixirs will only be used when the character is practicing.
 【修行模式设置说明】	Cultivation Mode Setting Explanation
 心境低于设定时开始“调心”，高于设定时开始“修/练”。	When Mental State falls below the set value, cultivation mode will be set to "Mind"; when Mental State rises above the set value, cultivation mode will be set to "Practice" or "Train".
@@ -21,6 +21,38 @@ Key	Value
 注：MOD提供的符箓可能不会生效。	Note: May not work on custom talisman from MODs.
 自动模式下会打断部分操作	Operations may be interrupted in automatic mode
 手动控制NPC时请先恢复默认	Revert the cultivator to "Default" mode before manually controlling them
+
+
+清心丹	Purity
+服用清心丹能暂时提升心境以及提高心境稳定程度[color=#ff0000]1日[/color]。	Purity Pill\r\nConsumption of the Purity Pill will calm one's Mental State to a certain extent, and reduces the fluctuation of mood within [color=#ff0000]1 day[/color].
+极乐丹	Eupho
+服用极乐丹能让弟子沉浸在欢乐中，持续[color=#ff0000]2天[/color]，但会减低工作效率。	Euphoria Pill\r\nConsumption of the Euphoria Pill will immerse one in happiness within [color=#ff0000]2 days[/color], but it greatly hinders work efficiency.
+灵石	SS
+能够[color=#0000ff]提升10%基本修炼速度[/color]，持续[color=#ff0000]3日[/color]。	Spirit Crystal\r\nBoosts [color=#0000ff]base Cultivation Speed by 10%[/color], lasting [color=#ff0000]3 days[/color].
+灵晶	SC
+能够[color=#0000ff]提升20%基本修炼速度[/color]，持续[color=#ff0000]15日[/color]。	Spirit Crystal\r\nBoosts [color=#0000ff]base Cultivation Speed by 20%[/color], lasting [color=#ff0000]15 days[/color].
+黄芽丹	Sprout
+以朱果炼制而成的丹药，能够[color=#0000ff]提升30%修炼速度[/color]，持续[color=#ff0000]1日[/color]。	Sprout Pill\r\nPill made from Crimson Fruit, it is capable of boosting [color=#0000ff]Cultivation Speed by 30%[/color], lasting [color=#ff0000]24 hours[/color].
+仅修行时使用	Practice Only
+选后弟子会仅在修行时自动服用选定的消耗品。	If checked, the character will automatically consume selected consumable item(s) only while they're practicing.
+默认模式	Default
+自动修行调心	Practice / Mind
+自动练功调心	Train / Mind
+调心	Mind
+修炼	Pr/Tr
+低于	  <
+高于	  >
+法宝自动归阵	Collect Arti
+自动将法宝归阵。	Automatically collect artifact to the Sword Shield.
+品阶	Tier
+威力	Power
+说明	Guide
+前面勾选后功能才会生效。	The function will only activate when the option before this is checked."
+品阶低于或等于设置，而且威力低于或等于设置的法宝将会自动归阵，无论法宝是否被禁用。	Only artifacts with tier is less than or equal to the set value, and power less than or equal to the set value will be automatically collected by Sword, regardless of whether the magic weapon is disabled or not.
+有制作者名字的法宝不会被归阵。	The magic weapon with the name of the maker will not be returned!
+自动治疗真气溢伤	Spirit-Heal
+自动治疗有“灵”标志的伤，需要通脉散。	Automatically treats injuries with "Spirit" tag, requires Spirit Powder.
+
 
 
 开	On
