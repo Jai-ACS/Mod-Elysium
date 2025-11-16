@@ -26,11 +26,12 @@ function MakeMeHappy_PutItemWindow:OnInit()
         local listItem = self.list:AddItemFromPool()
         local tempPlan = {}
         tempPlan.title = listItem:GetChild("plan")
-        tempPlan.title.text = Plan[i].title or "方案" .. i
+        tempPlan.title.text = Plan[i].title or XT("方案") .. i
 
         tempPlan.setshelfbtn = listItem:GetChild("setshelf")
         tempPlan.shelftext = listItem:GetChild("shelftext")
         tempPlan.shelftext.text = Plan[i].shelftext or XT("未设置")
+        tempPlan.setshelfbtn.text = XT("设置置物台")
         tempPlan.setshelfbtn.onClick:Add(function(context)
             local thing = CS.XiaWorld.UILogicMode_Select.Instance.CurSelectThing
             if thing ~= nil then
@@ -44,6 +45,7 @@ function MakeMeHappy_PutItemWindow:OnInit()
         tempPlan.setitembtn = listItem:GetChild("setitem")
         tempPlan.itemtext = listItem:GetChild("itemtext")
         tempPlan.itemtext.text = Plan[i].itemtext or XT("未设置")
+        tempPlan.setitembtn.text = XT("设置摆放物")
         tempPlan.setitembtn.onClick:Add(function(context)
             local thing = CS.XiaWorld.UILogicMode_Select.Instance.CurSelectThing
             if thing ~= nil then
@@ -56,6 +58,7 @@ function MakeMeHappy_PutItemWindow:OnInit()
         end)
 
         tempPlan.putallbtn = listItem:GetChild("putall")
+        tempPlan.putallbtn.text = XT("全部放置")
         tempPlan.putallbtn.onClick:Add(function(context)
             if Plan[i].shelftext == XT("未设置") or Plan[i].itemtext == XT("未设置") then
             else
@@ -75,6 +78,7 @@ function MakeMeHappy_PutItemWindow:OnInit()
         end)
 
         tempPlan.dropallbtn = listItem:GetChild("dropall")
+        tempPlan.dropallbtn.text = XT("全部丢下")
         tempPlan.dropallbtn.onClick:Add(function(context)
             if Plan[i].shelftext == XT("未设置") or Plan[i].itemtext == XT("未设置") then
             else
