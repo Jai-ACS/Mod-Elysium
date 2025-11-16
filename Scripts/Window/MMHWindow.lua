@@ -8,6 +8,28 @@ local MaxMind = 80
 local FaBaoToZhen = false
 local FaBaoRate = 8
 local FaBaoAttackPower = 50
+local EnableMindFromFu = true;
+local ExplainText =
+	XT("【默认快捷键说明】") .. "\r\n" ..
+	XT("面板：") .. " SHIFT + E\r\n" ..
+	XT("一键换符：") .. " SHIFT + R\r\n" ..
+	XT("一键放置：") .. " SHIFT + T\r\n" ..
+	XT("开/关心境符管理：") .. " SHIFT + Y\r\n" ..
+	"=================\r\n" ..
+	XT("【丹药设置说明】") .. "\r\n" ..
+	XT("自动食用选中的丹药，药效过后会自动接续。") .. "\r\n" ..
+	XT("选中仅修行时使用，NPC只会在修行时自动食用选中的丹药。") .. "\r\n" ..
+	"=================\r\n" ..
+	XT("【修行模式设置说明】") .. "\r\n" ..
+	XT("心境低于设定时开始“调心”，高于设定时开始“修/练”。") .. "\r\n" ..
+	"\r\n" ..
+	XT("【自动心境符管理】[状态：%s]") .. "\r\n" ..
+	XT("开启时，进入调心状态自动关闭影响心境的符箓，反之亦然。同时，心境值计算时会自动扣除正在使用的符箓。") .. "\r\n" ..
+	XT("例：设符箓A为+5心境、B为+1，心境最低值设为40；则46心境时进入调心状态，并关闭符箓。") .. "\r\n" ..
+	XT("注：MOD提供的符箓可能不会生效。") .. "\r\n" ..
+	"=================\r\n" ..
+	XT("自动模式下会打断部分操作") .. "\r\n" ..
+	XT("手动控制NPC时请先恢复默认")
 
 xlua.private_accessible(CS.XiaWorld.RemoteStorage)
 xlua.private_accessible(CS.XiaWorld.CommandEatItem)
@@ -25,14 +47,104 @@ local tbBuffItem = {
 function MakeMeHappy_Window:OnInit()
 	self.window.contentPane = UIPackage.CreateObject("MMHWindow", "MainWindow")
 	self.window.closeButton = self:GetChild("frame"):GetChild("n5")
-	self:GetChild("frame"):GetChild("title").text = "极乐世界"
-	self:GetChild("explain").tooltips = "面板【快捷键】：\r\nSHIFT + E\r\n一键换符【快捷键】：\r\nSHIFT + R\r\n=================\r\n丹药设置说明：\r\n\r\n【自动食用】选中的丹药\r\n药效过后会自动接续\r\n\r\n选中【仅修行时使用】\r\n【NPC】只会在【修行】时\r\n【自动食用】选中的丹药\r\n=================\r\n修行模式设置说明：\r\n\r\n心境低于设定时开始【调心】\r\n高于设定时开始【修/练】。\r\n=================\r\n*自动模式下会打断部分操作\r\n手动控制NPC时请先恢复默认\r\n"
+	self:GetChild("frame"):GetChild("title").text = XT("极乐世界")
+	self:UpdateExplainText()
+	
 	self.list = self:GetChild("list")
 	self.window:Center()
 end
 
-function MakeMeHappy_Window:OnShowUpdate()
+function MakeMeHappy_Window:UpdateExplainText()
+	local enableText = EnableMindFromFu and XT("开") or XT("关")
+	self:GetChild("explain").tooltips = string.format(ExplainText, enableText)
+		-- "[color=#000000]" .. XT("面板【快捷键】：") .. "[/color]\r\n" ..
+		-- "SHIFT + E\r\n一键换符【快捷键】：\r\n" ..
+		-- "SHIFT + R\r\n" .. 
+		-- "=================\r\n" .. 
+		-- "丹药设置说明：\r\n\r\n" .. 
+		-- "【自动食用】选中的丹药\r\n" .. 
+		-- "药效过后会自动接续\r\n\r\n" .. 
+		-- "选中【仅修行时使用】\r\n" .. 
+		-- "【NPC】只会在【修行】时\r\n" .. 
+		-- "【自动食用】选中的丹药\r\n" .. 
+		-- "=================\r\n" .. 
+		-- "修行模式设置说明：\r\n\r\n" .. 
+		-- "心境低于设定时开始【调心】\r\n" .. 
+		-- "高于设定时开始【修/练】。\r\n" .. 
+		-- "=================\r\n" .. 
+		-- "*自动模式下会打断部分操作\r\n" .. 
+		-- "手动控制NPC时请先恢复默认\r\n"
+end
 
+function MakeMeHappy_Window:OnShowUpdate()
+	local list = self:GetChild("list")
+	local ItemList = list:GetChildren()
+	local contentPane = self.window.contentPane
+	local zhiliao = self:GetChild("zhiliao")
+	local fabaoguizhen = self:GetChild("fabaoguizhen")
+	local min = self:GetChild("minvalue")
+	local max = self:GetChild("maxvalue")
+
+	-- contentPane:GetChild("author").text = "By: Lazy Fusky\nTranslated by: Kanna~Chan"
+	contentPane:GetChild("n34").text = "<"
+	contentPane:GetChild("n35").text = "Pr / Tr"
+	contentPane:GetChild("n36").text = ">"
+	contentPane:GetChild("n37").text = "Mind"
+	contentPane:GetChild("n54").text = "Tier"
+	contentPane:GetChild("n56").text = "Power"
+	contentPane:GetChildAt(19).text = "Guide"
+	contentPane:GetChildAt(19).tooltips = "The function will not activate until checked!\r\nIf the rank is less than or equal to the setting, the magic weapon with power less than or equal to the setting will be automatically returned, regardless of whether the magic weapon is disabled or not.\n\rThe magic weapon with the name of the maker will not be returned!"
+
+	zhiliao.text = "SpiritHeal"
+	zhiliao.tooltips = "Automatically treats Qi derivations;\nPanacea skill required"
+	fabaoguizhen.text = "Collect Arti"
+	fabaoguizhen.tooltips = "Automatically collect artifact to the Sword Shield"
+
+	-- min:SetScale(0.75, 0.75)
+	-- max:SetScale(0.75, 0.75)
+	-- contentPane:GetChild("n34"):SetScale(0.7, 0.7)
+	-- contentPane:GetChild("n35"):SetScale(0.9, 0.9)
+	-- contentPane:GetChild("n36"):SetScale(0.7, 0.7)
+	-- contentPane:GetChild("n37"):SetScale(0.9, 0.9)
+	-- contentPane:GetChild("n54"):SetScale(0.7, 0.7)
+	-- contentPane:GetChild("n56"):SetScale(0.7, 0.7)
+	-- contentPane:GetChild("n34"):SetPosition(339, 365, 0)
+	-- contentPane:GetChild("n35"):SetPosition(395, 356, 0)
+	-- contentPane:GetChild("n36"):SetPosition(436, 365, 0)
+	-- contentPane:GetChild("n37"):SetPosition(491, 356, 0)
+	-- contentPane:GetChild("n54"):SetPosition(-1, 365, 0)
+	-- contentPane:GetChild("n56"):SetPosition(59, 365, 0)
+	for i = 0, ItemList.Length - 1 do
+		local Item = ItemList[i]
+		
+		local qingxin = Item:GetChild("qingxin")
+		local jile = Item:GetChild("jile")
+		local lingshi = Item:GetChild("lingshi")
+		local lingjing = Item:GetChild("lingjing")
+		local huangya = Item:GetChild("huangya")
+		local xiulian = Item:GetChild("xiulian")
+		local moshi = Item:GetChild("moshi")
+		
+		qingxin.text = "Purity"
+		qingxin.tooltips = "Purity Pill\nConsumption of the Purity Pill will calm one's Mental State to a certain extent, and reduces the fluctuation of mood within [color=#ff0000]1 day[/color]."
+
+		jile.text = "Euph"
+		jile.tooltips = "Euphoria Pill\nConsumption of the Euphoria Pill will immerse one in happiness within [color=#ff0000]2 days[/color], but it greatly hinders work efficiency."
+
+		lingshi.text = "SS"
+		lingshi.tooltips = "Spirit Stones"
+
+		lingjing.text = "SC"
+		lingjing.tooltips = "Spirit Crystals"
+
+		huangya.text = "SP"
+		huangya.tooltips = "Sprout Pill\nPill made from Crimson Fruit, it is capable of boosting [color=#0000ff]Cultivation Speed by 30%[/color]. Lasts [color=#ff0000]24 hours[/color]."
+
+		xiulian.text = "Practice Only"
+		xiulian.tooltips = "If checked, the character will automatically consume selected elixir(s) only while they're practicing."
+
+		moshi.tooltips = "Default\r\nPractice-Mind\r\nTrain-Mind"
+	end
 end
 
 function MakeMeHappy_Window:OnShown() -- 显示窗口时
@@ -50,11 +162,12 @@ function MakeMeHappy_Window:OnShown() -- 显示窗口时
 	fabaoweili.text = FaBaoAttackPower
 
 	self.list:RemoveChildrenToPool()
-	local NpcList = Map.Things:GetActiveNpcs(g_emNpcRaceType.Wisdom, g_emFightCamp.Player)
+	local NpcList = Map.Things:GetPlayerActiveNpcs(g_emNpcRaceType.Wisdom)
 
 	for _, Npc in pairs(NpcList) do
 		if self:IsValidNpc(Npc) then
 			local Item = self.list:AddItemFromPool()
+			-- local Item = self.list:AddItemFromPool("ui://2fevh8bil1ry9c")
 			local NameLable = Item:GetChild("name")
 			NameLable.text = Npc.Name
 			Item.data = Npc.ID
@@ -66,6 +179,7 @@ function MakeMeHappy_Window:OnShown() -- 显示窗口时
 			local huangya = Item:GetChild("huangya")
 			local xiulian = Item:GetChild("xiulian")
 			local moshi = Item:GetChild("moshi") -- 模式0=默认, 模式1=修行调心, 模式2=练功调心
+			moshi.items = {"Default", "Train / Mind", "Train / Mind"}
 
 			if Npc.Rank ~= g_emNpcRank.Disciple then
 				lingshi.visible = false
@@ -110,6 +224,9 @@ function MakeMeHappy_Window:DecidePracticeMode() -- 处理自动调心
 				if EatList[EatNpc].moshi > 0 then
 					if EatList[EatNpc].moshi == 1 then -- 自动修行调心模式
 						local MindState = Npc.Needs:GetNeedValue("MindState")
+						local mindFromFu, mindFuList = self:GetMindFuAndValue(Npc.Equip)
+						MindState = MindState - mindFromFu; -- 减去符箓的影响值
+						
 						local NpcPracticeMode = Npc.PropertyMgr.Practice.PracticeMode
 						local Job = Npc.JobEngine.CurJob -- 取NPC当前工作
 						local JobType = nil
@@ -119,6 +236,7 @@ function MakeMeHappy_Window:DecidePracticeMode() -- 处理自动调心
 						if MindState <= MinMind then -- 心境低于设定
 							if NpcPracticeMode ~= CS.XiaWorld.g_emPracticeBehaviourKind.Quiet then -- 如果不在调心模式，则切换到调心模式
 								self:ChangePracticeMode(Npc, "tiaoxin")
+								self:ToggleFuList(Npc.Equip, mindFuList, false) -- 停用心境符箓
 							end
 							if JobType == "JobPractice" then -- 如果还在修行状态，则打断当前任务
 								Job:InterruptJob()
@@ -126,10 +244,12 @@ function MakeMeHappy_Window:DecidePracticeMode() -- 处理自动调心
 						elseif MindState >= MaxMind then -- 心境高于设定
 							if NpcPracticeMode ~= CS.XiaWorld.g_emPracticeBehaviourKind.Practice then -- 如果不在修行模式，则切换到修行模式
 								self:ChangePracticeMode(Npc, "xiulian")
+								self:ToggleFuList(Npc.Equip, mindFuList, true) -- 启用心境符箓
 							end
 						else -- 如果心境值处于区间段，但既不在修行，也不在调心，则切换到调心模式。
 							if NpcPracticeMode ~= CS.XiaWorld.g_emPracticeBehaviourKind.Practice and NpcPracticeMode ~= CS.XiaWorld.g_emPracticeBehaviourKind.Quiet then
 								self:ChangePracticeMode(Npc, "tiaoxin")
+								self:ToggleFuList(Npc.Equip, mindFuList, false) -- 停用心境符箓
 							end
 						end
 					elseif EatList[EatNpc].moshi == 2 then -- 自动练功调心模式
@@ -143,6 +263,7 @@ function MakeMeHappy_Window:DecidePracticeMode() -- 处理自动调心
 						if MindState <= MinMind then -- 心境低于设定
 							if NpcPracticeMode ~= CS.XiaWorld.g_emPracticeBehaviourKind.Quiet then -- 如果不在调心模式，则切换到调心模式
 								self:ChangePracticeMode(Npc, "tiaoxin")
+								self:ToggleFuList(Npc.Equip, mindFuList, false) -- 停用心境符箓
 							end
 							if JobType == "JobPractice" then -- 如果还在修行状态，则打断当前任务
 								Job:InterruptJob()
@@ -150,10 +271,12 @@ function MakeMeHappy_Window:DecidePracticeMode() -- 处理自动调心
 						elseif MindState >= MaxMind then -- 心境高于设定
 							if NpcPracticeMode ~= CS.XiaWorld.g_emPracticeBehaviourKind.Skill then -- 如果不在练功模式，则切换到练功模式
 								self:ChangePracticeMode(Npc, "liangong")
+								self:ToggleFuList(Npc.Equip, mindFuList, true) -- 停用心境符箓
 							end
 						else -- 如果心境值处于区间段，但既不在练功，也不在调心，则切换到调心模式。
 							if NpcPracticeMode ~= CS.XiaWorld.g_emPracticeBehaviourKind.Skill and NpcPracticeMode ~= CS.XiaWorld.g_emPracticeBehaviourKind.Quiet then
 								self:ChangePracticeMode(Npc, "tiaoxin")
+								self:ToggleFuList(Npc.Equip, mindFuList, false) -- 停用心境符箓
 							end
 							if JobType == "JobPractice" then -- 如果还在修行状态，则打断当前任务
 								Job:InterruptJob()
@@ -162,6 +285,40 @@ function MakeMeHappy_Window:DecidePracticeMode() -- 处理自动调心
 					end
 				end
 			end
+		end
+	end
+end
+
+local FuEquipTypeList = {CS.XiaWorld.g_emEquipType.Fu1, CS.XiaWorld.g_emEquipType.Fu2, CS.XiaWorld.g_emEquipType.Fu3, CS.XiaWorld.g_emEquipType.Fu4, CS.XiaWorld.g_emEquipType.Fu5, CS.XiaWorld.g_emEquipType.Fu6}
+function MakeMeHappy_Window:GetMindFuAndValue(equip) -- 计算所有符箓给于的心境值
+	local fuList = {} -- 储存影响心境的符箓
+	local count = 0; -- 储存心境值
+	if not EnableMindFromFu then
+		return count, fuList;
+	end
+	
+	for fi = 101, 106 do
+		local fuItem = equip:GetEquip(fi)
+		if fuItem then
+			for ei, effect in pairs(fuItem.EquptData) do
+				if effect.name == "MindStateBaseValue" then
+					fuList[fi] = fuItem;
+					if equip:CheackFuThingActive(fi) then
+						count = count + effect.addv * 6 / 5;
+					end
+				end
+			end
+		end
+	end
+	return count, fuList;
+end
+
+function MakeMeHappy_Window:ToggleFuList(equip, fuList, isOn) -- 开启或关闭符箓列表
+	for i, fu in pairs(fuList) do
+		if isOn then
+			equip:ActiveItemThing(fu, FuEquipTypeList[i - 100])
+		else
+			equip:CloseItemthing(fu, FuEquipTypeList[i - 100])
 		end
 	end
 end
@@ -356,6 +513,10 @@ end
 
 function MakeMeHappy_Window:ChangeFu() -- 一键换符
 	local Npc = CS.XiaWorld.UILogicMode_Select.Instance.CurSelectThing;
+	if not Npc then
+		return
+	end
+	
 	if Npc.ThingType == CS.XiaWorld.g_emThingType.Npc then
 		local Equip = Npc.Equip
 		local ActiveState = {}
@@ -493,6 +654,20 @@ function MakeMeHappy_Window:GetMindValue() -- 取心境区间
 	return MinMind, MaxMind
 end
 
+function MakeMeHappy_Window:GetEnableMindFromFu() -- 开关心境符管理
+    return EnableMindFromFu
+end
+
+function MakeMeHappy_Window:SetEnableMindFromFu(value) -- 开关心境符管理
+    EnableMindFromFu = value;
+	self:UpdateExplainText();
+end
+
+function MakeMeHappy_Window:ToggleMindFromFu() -- 开/关 符箓对心境的影响
+	EnableMindFromFu = not EnableMindFromFu;
+	self:UpdateExplainText();
+end
+
 function MakeMeHappy_Window:SetEatList(tbEatList) -- 设置吃药详情列表
 	EatList = tbEatList or {}
 end
@@ -536,20 +711,11 @@ function MakeMeHappy_Window:IsValidNpc(Npc) -- 检测NPC可用性
 	-- if Npc.PropertyMgr.Practice.GongStateLevel == CS.XiaWorld.g_emGongStageLevel.God2 then
 	-- return false
 	-- end
-	if Npc.IsDeath then
+	if not Npc.IsValid or Npc.IsDeath or Npc.IsPuppet or Npc.IsZombie or Npc.IsVistor or Npc.IsWaiMen then
 		return false
-	end
-	if Npc.IsPuppet then
+	elseif Npc.GongKind == Enum.g_emGongKind.Body or Npc.GongKind == Enum.g_emGongKind.God then
 		return false
+	else
+		return true
 	end
-	if Npc.IsZombie then
-		return false
-	end
-	if Npc.IsVistor then
-		return false
-	end
-	if Npc.IsWaiMen then
-		return false
-	end
-	return true
 end
