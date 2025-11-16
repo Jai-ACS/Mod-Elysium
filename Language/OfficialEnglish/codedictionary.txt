@@ -3,9 +3,9 @@ Key	Value
 打开面板	Open Panel
 一键换符	One-Click Change Talisman
 一键放置	One-Click Placement
-开/关心境符管理  Toggle automatic management of Mental State talisman
+开/关心境符管理	Toggle automatic management of Mental State talisman
 *功能说明	*Explanation
-【默认快捷键说明】	[Default Hotkey Explanation]
+【默认快捷键说明	[Default Hotkey Explanation]
 面板：	Panel:
 一键换符：	One-Click Change Talisman:
 一键放置：	One-Click Placement:
