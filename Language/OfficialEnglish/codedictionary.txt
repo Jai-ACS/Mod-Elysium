@@ -5,17 +5,17 @@ Key	Value
 一键放置	One-Click Placement
 开/关心境符管理  Toggle automatic management of Mental State talisman
 *功能说明	*Explanation
-【默认快捷键说明】	Default Hotkey Explanation
+【默认快捷键说明】	[Default Hotkey Explanation]
 面板：	Panel:
 一键换符：	One-Click Change Talisman:
 一键放置：	One-Click Placement:
 开/关自动心境符管理：	Toggle automatic management of Mental State talisman:
-【丹药设置说明】	Elixir Setting Explanation
+【丹药设置说明】	[Elixir Setting Explanation]
 自动食用选中的丹药，药效过后会自动接续。	Auto-consume selected consumable item(s), redoing when the elixir's effects wear off.
 选中仅修行时使用，NPC只会在修行时自动食用选中的丹药。	If [Practice Only] is selected, selected elixirs will only be used when the character is practicing.
-【修行模式设置说明】	Cultivation Mode Setting Explanation
+【修行模式设置说明】	[Cultivation Mode Setting Explanation]
 心境低于设定时开始“调心”，高于设定时开始“修/练”。	When Mental State falls below the set value, cultivation mode will be set to "Mind"; when Mental State rises above the set value, cultivation mode will be set to "Practice" or "Train".
-【自动心境符管理】[状态：%s]	Automatic management of Mental State talisman [Status: %s]
+【自动心境符管理】[状态：%s]	[Automatic management of Mental State talisman] [Status: %s]
 开启时，进入调心状态自动关闭影响心境的符箓，反之亦然。同时，心境值计算时会自动扣除正在使用的符箓。	Upon turning on, talismans affecting Mental State will be automatically unequipped when cultivation mode is changed to "Mind" and equipped when cultivation mode is changed to "Practice" or "Train". Additionally, MOD will automatically deduct Mental State from talismans for calculation.
 例：设符箓A为+5心境、B为+1，心境最低值设为40；则46心境时进入调心状态，并关闭符箓。	Example: <Not translated yet>
 注：MOD提供的符箓可能不会生效。	Note: May not work on custom talisman from MODs.
@@ -38,17 +38,31 @@ Key	Value
 自动练功调心	Train / Mind
 调心	Mind
 修炼	Pr/Tr
-低于	  <
-高于	  >
+低于	    <
+高于	    >
 法宝自动归阵	Collect Arti
 自动将法宝归阵。	Automatically collect artifact to the Sword Shield.
 品阶	Tier
 威力	Power
 说明	Guide
-前面勾选后功能才会生效。	The function will only activate when the option before this is checked."
+前面勾选后功能才会生效。	The function will only activate when the option before this is checked.
 品阶低于或等于设置，而且威力低于或等于设置的法宝将会自动归阵，无论法宝是否被禁用。	Only artifacts with tier is less than or equal to the set value, and power less than or equal to the set value will be automatically collected by Sword, regardless of whether the magic weapon is disabled or not.
 有制作者名字的法宝不会被归阵。	The magic weapon with the name of the maker will not be returned!
 自动治疗真气溢伤	Spirit-Heal
 自动治疗有“灵”标志的伤，需要通脉散。	Automatically treats injuries with "Spirit" tag, requires Spirit Powder.
 开	On
 关	Off
+极乐世界（一键放置）  Elysium (One-Click Placement)
+（重要）	 (Important)
+【重要说明】	[Important Note]
+[color=#FF0000]请不要设置常用的置物台作为一键放置的置物台，注意看下面的【摆放原理】，确定理解了再设置，以免发生不幸事件。[/color]	[color=#FF0000]Please do not set a common type of display for One-Click Placement function, take note of the below mentioned [Placement Principle], make sure you understand the principle before using the placement feature, in order to prevent any possible unfortunate incident.[/color]
+【设置说明】	[Instructions]
+先选择某种材料置物台，点击设置置物台，看到MOD面板上出现置物台名称则设置成功。摆放物也是同样设置方法。	Firstly, choose a display of a particular material type, click on the display, see that the name of the display is shown on the MOD panel and the setting is successful. The same method is used to set the item to be placed.
+【摆放原理】	[Placement Principle]
+MOD会寻找地图上所有你设置的这种材料的置物台，然后摆上你设置要摆的物品。比如你设置了铁置物台摆放灵木，那么全图所有铁置物台上都会被摆上灵木。	MOD will look for all displays from the map that are of the same type that you had set, then place the item that you had set on these displays. For example, you had set iron display with spiritwood, then all iron displays on the map will be placed with spiritwood.
+所以不要将聚灵阵里常用材料的置物台设置为MOD一键摆放的置物台，建议造一些不常用材料的置物台，比如灰石、大理石之类，专门用作MOD的一键摆放。	Therefore, do not set display with the same material as the displays common used in your cultivation arrays for One-Click Placement feature, recommend to build displays with uncommonly used material, such as graystone, marble and so on, to be used for One-Click Placement feature.
+【其他说明】	[Other Instructions]
+MOD一共内置五套方案，各自独立，对应五行聚灵阵。[color=#FF0000]这个MOD主要是为了手动灵气爆发而设计，不适合精细摆放。[/color]能正常解放双手，但不要做太骚的操作，可能会有BUG。	MOD has provided 5 sets of programs, each program independent of each other, corresponding to the five elements of cultivation arrays. [color=#FF0000]This MOD feature is designed mainly for Manual Qi Burst, not suitable for fine placement.[/color] Able to free up your hands, but don't do anything too flashy, for bugs may occur.
+[color=#FF0000]只能摆放可堆叠的物品。[/color]	[color=#FF0000]Only stackable items are placeable.[/color]
+方案名可以自定义。	The program names are customizable.
+未设置	Not Set
