@@ -87,6 +87,7 @@ function MakeMeHappy_Window:OnShowUpdate()
 	local max = self:GetChild("maxvalue")
 
 	-- contentPane:GetChild("author").text = "By: Lazy Fusky\nTranslated by: Kanna~Chan"
+	contentPane:GetChild("author").text = ""
 	contentPane:GetChild("n34").text = XT("低于")
 	contentPane:GetChild("n35").text = XT("调心")
 	contentPane:GetChild("n36").text = XT("高于")
