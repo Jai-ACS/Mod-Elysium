@@ -48,6 +48,7 @@ function MakeMeHappy_Window:OnInit()
 	self.window.contentPane = UIPackage.CreateObject("MMHWindow", "MainWindow")
 	self.window.closeButton = self:GetChild("frame"):GetChild("n5")
 	self:GetChild("frame"):GetChild("title").text = XT("极乐世界")
+	self:GetChild("explain").text = XT("*功能说明")
 	self:UpdateExplainText()
 	
 	self.list = self:GetChild("list")
