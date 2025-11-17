@@ -186,6 +186,10 @@ function MakeMeHappy_Window:OnShown() -- 显示窗口时
 			local moshi = Item:GetChild("moshi") -- 模式0=默认, 模式1=修行调心, 模式2=练功调心
 			moshi.items = {XT("默认模式"), XT("自动修行调心"), XT("自动练功调心")}
 
+			local moshi_bg = moshi:GetChild("n1")
+			local moshi_arrow = moshi:GetChild("n5")
+			moshi_arrow.relations:Add(target, CS.FairyGUI.RelationType.Right)
+
 			if Npc.Rank ~= g_emNpcRank.Disciple then
 				lingshi.visible = false
 				lingjing.visible = false
