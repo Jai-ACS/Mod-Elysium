@@ -18,9 +18,15 @@ function MakeMeHappy:OnInit()
         SaveData.MakeMeHappy_FaBaoAttackPower)
     local PutItemWindow = self:GetPutItemWindow()
     PutItemWindow:SetPlan(SaveData.MakeMeHappy_Plan)
+
+	self:registerWithAdapter()
+end
+
+function MakeMeHappy:registerWithAdapter()
+	if (Adapter == nil) then
+		return
+	end
 	
-	
-	-- Added by Jai
 	Adapter:register(XT("极乐世界"), XT("打开面板"),
 		function()
 			local MMHWindow = self:GetMMHWindow()
@@ -201,6 +207,7 @@ function MakeMeHappy:GetPutItemWindow()
 	until window
 	return window
 end
+
 
 
 
