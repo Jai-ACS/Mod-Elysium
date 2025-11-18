@@ -38,8 +38,8 @@ Key	Value
 自动练功调心	Train / Mind
 调心	Mind
 修炼	Cul
-低于	<
-高于	>
+低于	     <
+高于	     >
 法宝自动归阵	Collect Arti
 自动将法宝归阵。	Automatically collect artifact to the Sword Shield.
 品阶	Tier
