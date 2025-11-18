@@ -188,7 +188,8 @@ function MakeMeHappy_Window:OnShown() -- 显示窗口时
 
 			local moshi_bg = moshi:GetChild("n1")
 			local moshi_arrow = moshi:GetChild("n5")
-			moshi_arrow:AddRelation(moshi_bg, CS.FairyGUI.RelationType.Right_Right)
+			-- moshi_arrow:AddRelation(moshi_bg, CS.FairyGUI.RelationType.Right_Right)
+			moshi_arrow.x = moshi_bg.width - moshi_arrow.width
 
 			if Npc.Rank ~= g_emNpcRank.Disciple then
 				lingshi.visible = false
