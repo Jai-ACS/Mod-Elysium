@@ -101,9 +101,9 @@ function MakeMeHappy_Window:OnShowUpdate()
 		XT("有制作者名字的法宝不会被归阵。")
 
 	zhiliao.text = XT("自动治疗真气溢伤")
-	zhiliao.tooltips = XT("自动治疗有“灵”标志的伤，需要通脉散。")
+	-- zhiliao.tooltips = XT("自动治疗有“灵”标志的伤，需要通脉散。")
 	fabaoguizhen.text = XT("法宝自动归阵")
-	fabaoguizhen.tooltips = XT("自动将法宝归阵。")
+	-- fabaoguizhen.tooltips = XT("自动将法宝归阵。")
 
 	-- min:SetScale(0.75, 0.75)
 	-- max:SetScale(0.75, 0.75)
@@ -119,9 +119,7 @@ function MakeMeHappy_Window:OnShowUpdate()
 	-- contentPane:GetChild("n37"):SetPosition(491, 356, 0)
 	-- contentPane:GetChild("n54"):SetPosition(-1, 365, 0)
 	-- contentPane:GetChild("n56"):SetPosition(59, 365, 0)
-	contentPane:GetChild("n36").x = 430
-	max.x = 450
-	contentPane:GetChild("n37").x = 485
+	
 	for i = 0, ItemList.Length - 1 do
 		local Item = ItemList[i]
 		
@@ -134,24 +132,24 @@ function MakeMeHappy_Window:OnShowUpdate()
 		local moshi = Item:GetChild("moshi")
 		
 		qingxin.text = XT("清心丹")
-		qingxin.tooltips = XT("服用清心丹能暂时提升心境以及提高心境稳定程度[color=#ff0000]1日[/color]。")
+		-- qingxin.tooltips = XT("服用清心丹能暂时提升心境以及提高心境稳定程度[color=#ff0000]1日[/color]。")
 
 		jile.text = XT("极乐丹")
-		jile.tooltips = XT("服用极乐丹能让弟子沉浸在欢乐中，持续[color=#ff0000]2天[/color]，但会减低工作效率。")
+		-- jile.tooltips = XT("服用极乐丹能让弟子沉浸在欢乐中，持续[color=#ff0000]2天[/color]，但会减低工作效率。")
 
 		lingshi.text = XT("灵石")
-		lingshi.tooltips = XT("能够[color=#0000ff]提升10%基本修炼速度[/color]，持续[color=#ff0000]3日[/color]。")
+		-- lingshi.tooltips = XT("能够[color=#0000ff]提升10%基本修炼速度[/color]，持续[color=#ff0000]3日[/color]。")
 
 		lingjing.text = XT("灵晶")
-		lingjing.tooltips = XT("能够[color=#0000ff]提升20%基本修炼速度[/color]，持续[color=#ff0000]15日[/color]。")
+		-- lingjing.tooltips = XT("能够[color=#0000ff]提升20%基本修炼速度[/color]，持续[color=#ff0000]15日[/color]。")
 
 		huangya.text = XT("黄芽丹")
-		huangya.tooltips = XT("以朱果炼制而成的丹药，能够[color=#0000ff]提升30%修炼速度[/color]，持续[color=#ff0000]1日[/color]。")
+		-- huangya.tooltips = XT("以朱果炼制而成的丹药，能够[color=#0000ff]提升30%修炼速度[/color]，持续[color=#ff0000]1日[/color]。")
 
 		xiulian.text = XT("仅修行时使用")
-		xiulian.tooltips = XT("选后弟子会仅在修行时自动服用选定的消耗品。")
+		-- xiulian.tooltips = XT("选后弟子会仅在修行时自动服用选定的消耗品。")
 
-		moshi.tooltips = XT("默认模式") .. "\r\n" .. XT("自动修行调心") .. "\r\n" .. XT("自动练功调心")
+		-- moshi.tooltips = XT("默认模式") .. "\r\n" .. XT("自动修行调心") .. "\r\n" .. XT("自动练功调心")
 	end
 end
 
@@ -189,7 +187,7 @@ function MakeMeHappy_Window:OnShown() -- 显示窗口时
 			local moshi = Item:GetChild("moshi") -- 模式0=默认, 模式1=修行调心, 模式2=练功调心
 			moshi.items = {XT("默认模式"), XT("自动修行调心"), XT("自动练功调心")}
 
-			-- 
+			-- Fixed mis-aligned combo-box button
 			local moshi_bg = moshi:GetChild("n1")
 			local moshi_arrow = moshi:GetChild("n5")
 			moshi_arrow.x = moshi_bg.width - moshi_arrow.width
