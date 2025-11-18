@@ -113,12 +113,15 @@ function MakeMeHappy_Window:OnShowUpdate()
 	-- contentPane:GetChild("n37"):SetScale(0.9, 0.9)
 	-- contentPane:GetChild("n54"):SetScale(0.7, 0.7)
 	-- contentPane:GetChild("n56"):SetScale(0.7, 0.7)
-	contentPane:GetChild("n34"):SetPosition(339, 365, 0)
-	contentPane:GetChild("n35"):SetPosition(395, 356, 0)
-	contentPane:GetChild("n36"):SetPosition(436, 365, 0)
-	contentPane:GetChild("n37"):SetPosition(491, 356, 0)
-	contentPane:GetChild("n54"):SetPosition(-1, 365, 0)
-	contentPane:GetChild("n56"):SetPosition(59, 365, 0)
+	-- contentPane:GetChild("n34"):SetPosition(339, 365, 0)
+	-- contentPane:GetChild("n35"):SetPosition(395, 356, 0)
+	-- contentPane:GetChild("n36"):SetPosition(436, 365, 0)
+	-- contentPane:GetChild("n37"):SetPosition(491, 356, 0)
+	-- contentPane:GetChild("n54"):SetPosition(-1, 365, 0)
+	-- contentPane:GetChild("n56"):SetPosition(59, 365, 0)
+	contentPane:GetChild("n36").x = 430
+	max.x = 450
+	contentPane:GetChild("n37").x = 485
 	for i = 0, ItemList.Length - 1 do
 		local Item = ItemList[i]
 		
