@@ -37,7 +37,7 @@ Key	Value
 自动修行调心	Practice / Mind
 自动练功调心	Train / Mind
 调心	Mind
-修炼	Pr/Tr
+修炼	Cul
 低于	<
 高于	>
 法宝自动归阵	Collect Arti
