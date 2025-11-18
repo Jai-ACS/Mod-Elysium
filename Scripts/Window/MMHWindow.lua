@@ -113,12 +113,12 @@ function MakeMeHappy_Window:OnShowUpdate()
 	-- contentPane:GetChild("n37"):SetScale(0.9, 0.9)
 	-- contentPane:GetChild("n54"):SetScale(0.7, 0.7)
 	-- contentPane:GetChild("n56"):SetScale(0.7, 0.7)
-	-- contentPane:GetChild("n34"):SetPosition(339, 365, 0)
-	-- contentPane:GetChild("n35"):SetPosition(395, 356, 0)
-	-- contentPane:GetChild("n36"):SetPosition(436, 365, 0)
-	-- contentPane:GetChild("n37"):SetPosition(491, 356, 0)
-	-- contentPane:GetChild("n54"):SetPosition(-1, 365, 0)
-	-- contentPane:GetChild("n56"):SetPosition(59, 365, 0)
+	contentPane:GetChild("n34"):SetPosition(339, 365, 0)
+	contentPane:GetChild("n35"):SetPosition(395, 356, 0)
+	contentPane:GetChild("n36"):SetPosition(436, 365, 0)
+	contentPane:GetChild("n37"):SetPosition(491, 356, 0)
+	contentPane:GetChild("n54"):SetPosition(-1, 365, 0)
+	contentPane:GetChild("n56"):SetPosition(59, 365, 0)
 	for i = 0, ItemList.Length - 1 do
 		local Item = ItemList[i]
 		
@@ -186,9 +186,9 @@ function MakeMeHappy_Window:OnShown() -- 显示窗口时
 			local moshi = Item:GetChild("moshi") -- 模式0=默认, 模式1=修行调心, 模式2=练功调心
 			moshi.items = {XT("默认模式"), XT("自动修行调心"), XT("自动练功调心")}
 
+			-- 
 			local moshi_bg = moshi:GetChild("n1")
 			local moshi_arrow = moshi:GetChild("n5")
-			-- moshi_arrow:AddRelation(moshi_bg, CS.FairyGUI.RelationType.Right_Right)
 			moshi_arrow.x = moshi_bg.width - moshi_arrow.width
 
 			if Npc.Rank ~= g_emNpcRank.Disciple then
