@@ -3,14 +3,14 @@ Mobile port of Elysium mod. Mod requires and uses [Hotkey Adapter](https://githu
 
 Other than that, this mobile port also:
 1. Has multi-language support
-	* Support English and Chinese languages at initial release (the English variant and Chinese variant of the mod has been merged)
-	* More languages could be added in the future; you could submit translation by:
+	* Support English and Chinese languages at initial release (the English variant and Chinese variant of the mod have been merged)
+	* More languages could be added in the future; you could submit your translation by:
 		1. Forking this repository
 		2. Adding in new [translation file](Language/OfficialEnglish/codedictionary.txt) for the language
-		3. Submitting in a pull request.
+		3. Submitting it through a pull request here
 	* You could also submit translation to me via discord (one of the mod related channels), tagging me (Jai, username: jai.san) in the post
-	* Credits will be provided any successful submission
-2. Some English translations are updated as they are either not well translated or are total mis-translation
+	* Credits will be provided upon successful submission (please provide due credit if you are not the actual translator)
+2. Some English translations are updated as they are either not well translated or are mis-translated
 
 ## Main Features
 1. Automate cultivation for inner disciples
@@ -26,14 +26,10 @@ Other than that, this mobile port also:
 5. Automatically treat injuries with "Spirit" tag
 6. Automatically collect and send artifacts to Sword Shield building
 
-## Changes
-1. Improved the translations (some mis-translations are fixed)
-2. 
-
 ## Issues
-1. The panels (as well as the controls on them) are pretty small and it could be challenging to do proper configuration
-2. Tooltip (i.e. pop-up) that can explain what certain settings do are now disabled - those are supposed to show upon hovering the mouse over the setting, but since most people don't have a mouse while playing on the mobile version of the game, the only way to activate the tooltip is to tap on the setting, which could prevent checkboxes from being selected
-3. Some tooltips are retained because they are not on a setting. However, the default pop-up is usually too small, which could truncate long instructions
+1. The panels (as well as the controls on them) are pretty small and it could be challenging to configure settings on the panels
+2. Tooltip (i.e. pop-up) that can explain what certain settings do are now disabled - those are supposed to show upon hovering the mouse over the setting, but since most people don't have a mouse while playing on the mobile version of the game, the only way to activate the tooltip is to tap on the setting, which conflicts with the selection of the checkboxes
+3. Some tooltips are retained because they are not on a setting. However, the default pop-up is pretty small, which are truncating away long instruction texts
 
 ## Planned Enhancements
 There are plans to further enhance this mod. Whether they do become reality or not would depend on my motivation and time.
@@ -41,3 +37,6 @@ There are plans to further enhance this mod. Whether they do become reality or n
 2. [ ] Add in cultivation via Meditation miracle
 3. [ ] Improve the logic/algorithm to increase cultivation efficiency
 4. [ ] Change how One-Click Placement works to increase usability
+
+## Credits
+To be updated
