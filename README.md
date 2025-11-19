@@ -1,3 +1,6 @@
+[[阅读中文版信息](README-zh.md)]
+<hr>
+
 # Elysium
 Mobile port of Elysium mod. Mod requires and uses [Hotkey Adapter](https://github.com/Jai-ACS/Mod-HotkeyAdapter) mod to bridge the original requirement for hotkeys, which most mobile devices are incapable of performing. The mod continues to support hotkeys for mobile devices that are connected to a keyboard device, though the mobile version of the game itself does not support configuration of hotkeys (for changing activation keys).
 
@@ -7,7 +10,7 @@ Other than that, this mobile port also:
 	* More languages could be added in the future; you could submit your translation by:
 		1. Forking this repository
 		2. Adding in new [translation file](Language/OfficialEnglish/codedictionary.txt) for the language
-		3. Submitting it through a pull request here
+		3. Submitting it through a [pull request here](https://github.com/Jai-ACS/Mod-Elysium/pulls)
 	* You could also submit translation to me via discord (one of the mod related channels), tagging me (Jai, username: jai.san) in the post
 	* Credits will be provided upon successful submission (please provide due credit if you are not the actual translator)
 2. Some English translations are updated as they are either not well translated or are mis-translated
@@ -39,4 +42,8 @@ There are plans to further enhance this mod. Whether they do become reality or n
 4. [ ] Change how One-Click Placement works to increase usability
 
 ## Credits
-To be updated
+This mod has been cloned way too many times so it has became hard to ascertain who did what. Therefore, there may be some inaccuracies.
+* Original Author: **懒惰夫斯基 (Lazy Fusky)**
+* Original Translator: **Kanna~Chan**
+* Fix for issue with eating items from Mini Universe: **Akira**
+* New Feature: Automatic equipping and unequipping of Mental State boosting talisman: **Japlay**
