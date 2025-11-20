@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="1a9lgw15">
+  <resources>
+    <component id="shrj0" name="ModListWindow.xml" path="/" exported="true"/>
+    <component id="e5v31" name="ModListItem.xml" path="/" exported="true"/>
+    <component id="e5v32" name="OpenButton.xml" path="/" exported="true"/>
+    <image id="b28y7" name="icon-adapter.png" path="/"/>
+  </resources>
+  <publish name="" path="E:\ljyiiima\Games\了不起的修仙模拟器\Mobile\Modding\Mods\Mod-HotkeyAdapter\UI" packageCount="2"/>
+</packageDescription>

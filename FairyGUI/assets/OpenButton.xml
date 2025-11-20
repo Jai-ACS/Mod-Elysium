@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="110,110" pivot="0.5,0.5" extention="Button">
+  <displayList>
+    <image id="n8_b28y" name="background" src="kjtf4w" fileName="images/button_bt02.png" pkg="ncbwb41m" xy="0,0" size="110,110"/>
+    <image id="n6_b28y" name="icon" src="b28y7" fileName="icon-adapter.png" xy="25,25" size="60,60"/>
+    <text id="n1_jh8p" name="title" xy="0,80" size="110,30" fontSize="20" color="#d6c8ad" align="center" vAlign="middle" autoSize="none" bold="true" strokeColor="#3a4346" text="Bridge"/>
+  </displayList>
+  <Button/>
+</component>

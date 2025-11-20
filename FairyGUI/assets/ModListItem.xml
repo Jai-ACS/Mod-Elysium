@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="650,95">
+  <displayList>
+    <graph id="n2_fzqi" name="border" xy="0,0" size="650,95" type="rect" lineColor="#00000000" fillColor="#4cffffff">
+      <relation target="" sidePair="width-width,height-height"/>
+    </graph>
+    <text id="n0_fzqi" name="name" xy="25,10" size="600,30" fontSize="20" autoSize="none" bold="true" text="Mod Name"/>
+    <list id="n1_fzqi" name="list" xy="25,50" size="600,35" layout="flow_hz" scroll="both" defaultItem="ui://ncbwb41mv6076" autoClearItems="true">
+      <item title="Mod Function 1"/>
+      <item title="Mod Function 2"/>
+    </list>
+  </displayList>
+  <relation target="n1_fzqi" sidePair="bottomext-bottom"/>
+</component>
