@@ -12,7 +12,7 @@
 		2. 增添新语言的[翻译文档](Language/OfficialEnglish/codedictionary.txt)
 		3. 在此仓库提交 [Pull Request](https://github.com/Jai-ACS/Mod-Elysium/pulls)
 	* 你也可以在 Discord 平台与我取得联系，请在信息中标记我 (Jai, 用户名：jai.san)
-	* 提交成功就会把提交者增加到【致谢】章节（如不是本人翻译的，请告知出原提交人）
+	* 提交成功就会把提交者增加到【致谢】章节里（如不是本人翻译的，请说明出自谁的手）
 2. 更新和纠正了一些英文翻译
 
 ## 主要功能
@@ -24,14 +24,14 @@
 	* 注：用快捷键才会好用
 3. 一键在/从置物台置放和丢下物品
 	* 主要用于手动爆发灵气
-4. Toggle the automatic equipping and unequipping of Mental State boosting talismans for enhanced cultivation to recovery ratio
-	* Note: The status is currently only visible in the explanation / instruction pop-up
-5. Automatically treat injuries with "Spirit" tag
-6. Automatically collect and send artifacts to Sword Shield building
+4. 开/关自动管理能提升心境的符咒的激活状态，来整体提升修炼和心境恢复的效率
+	* 注：此功能的开关状态只在面板中的说明里显示
+5. 自动治疗拥有“灵“标签的伤
+6. 自动收集及回归法宝到剑阵中
 
-## Issues
-1. The panels (as well as the controls on them) are pretty small and it could be challenging to configure settings on the panels
-2. Tooltip (i.e. pop-up) that can explain what certain settings do are now disabled - those are supposed to show upon hovering the mouse over the setting, but since most people don't have a mouse while playing on the mobile version of the game, the only way to activate the tooltip is to tap on the setting, which conflicts with the selection of the checkboxes
+## 问题
+1. 面板以及里头的全部东西都挺小的，导致对设置造成一定挑战
+2. 暂时去除一些输入框的提示框 - 那原本是用于解释一些输入框的作用，但是因为手游版没有滑鼠，导致提示框只能在点击时打开，和输入框起了冲突
 3. Some tooltips are retained because they are not on a setting. However, the default pop-up is pretty small, which are truncating away long instruction texts
 
 ## Planned Enhancements
