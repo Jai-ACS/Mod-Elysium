@@ -12,7 +12,7 @@
 		2. 增添新语言的[翻译文档](Language/OfficialEnglish/codedictionary.txt)
 		3. 在此仓库提交 [Pull Request](https://github.com/Jai-ACS/Mod-Elysium/pulls)
 	* 你也可以在 Discord 平台与我取得联系，请在信息中标记我 (Jai, 用户名：jai.san)
-	* 提交成功就会把提交者增加到【致谢】章节里（如不是本人翻译的，请说明出自谁的手）
+	* 提交成功就会把提交者增加到《鸣谢》章节里（如不是本人翻译的，请说明出自谁的手）
 2. 更新和纠正了一些英文翻译
 
 ## 主要功能
@@ -29,21 +29,21 @@
 5. 自动治疗拥有“灵“标签的伤
 6. 自动收集及回归法宝到剑阵中
 
-## 问题
+## 已知问题
 1. 面板以及里头的全部东西都挺小的，导致对设置造成一定挑战
 2. 暂时去除一些输入框的提示框 - 那原本是用于解释一些输入框的作用，但是因为手游版没有滑鼠，导致提示框只能在点击时打开，和输入框起了冲突
-3. Some tooltips are retained because they are not on a setting. However, the default pop-up is pretty small, which are truncating away long instruction texts
+3. 保留了一些和输入框无关的提示框。但是，由于系统生成的提示框尺寸偏小，导致较长的说明文本被截断
 
-## Planned Enhancements
-There are plans to further enhance this mod. Whether they do become reality or not would depend on my motivation and time.
-1. [ ] Overhaul panels to make them suitable for mobile devices
-2. [ ] Add in cultivation via Meditation miracle
-3. [ ] Improve the logic/algorithm to increase cultivation efficiency
-4. [ ] Change how One-Click Placement works to increase usability
+## 强化计划
+我目前有强化此MOD的打算。最后是否会成真就得看我是否有动力和时间了。
+1. [ ] 整修各个面板，使面板适于在手游版使用
+2. [ ] 增加使用《入定》神通来进行修行
+3. [ ] 优化MOD里的代码和逻辑，使整体修炼得到提升
+4. [ ] 整修《一键放置》的功能，提升其功能的可用性
 
-## Credits
-This mod has been cloned way too many times so it has became hard to ascertain who did what. Therefore, there may be some inaccuracies.
-* Original Author: **懒惰夫斯基 (Lazy Fusky)**
-* Original Translator: **Kanna~Chan**
-* Fix for issue with eating items from Mini Universe: **Akira**
-* New Feature: Automatic equipping and unequipping of Mental State boosting talisman: **Japlay**
+## 鸣谢
+由于此MOD被复制太多次，导致我很难确定什么功能是出自谁手，所以会有一定不准确性。
+* 原作者：**懒惰夫斯基 (Lazy Fusky)**
+* 原英文翻译：**Kanna~Chan**
+* 修复从小乾坤界服用物品的问题：**Akira**
+* 新添功能：自动管理能提升心境的符咒的激活状态：**Japlay**
