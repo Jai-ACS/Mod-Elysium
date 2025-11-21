@@ -1,16 +1,11 @@
 {
 	"Name": "MakeMeHappy",
-	"DisplayName": "极乐世界 | Elysium",
+	"DisplayName": "Elysium | 极乐世界",
 	"GameVersion": 1.2,
 	"Version": 0.1,
-	"Desc": "[作者]\r\n    Catnip.\r\n[简介]\r\n【MOD修改说明】\r\n\r\n自动修行调心仅显示内门弟子\r\n\r\n修复一键放置不生效问题\r\n\r\n可以从乾坤界拿其他药物\r\n\r\n\r\n【原MOD说明】\r\n\r\nMOD和金丹助手MOD有冲突，导致人物数据加载失败，若想继续使用本MOD建议取消订阅金丹助手MOD，或者来回切换激活使用。\r\n\r\n【2.0更新功能】\r\n解决丹药吃不到的问题，现已增加乾坤界丹药检测。\r\n\r\n【主要功能】\r\n自动吃药，智能修练，自动冶疗真气溢伤，一键换符，法宝自动归阵，一键放置（摆放）、扔掉置物台上的物物品。\r\n\r\n[color=#FF0000]【快捷键】\r\nMOD面板：【SHIFT+E】\r\n一键换符：【SHIFT+R】\r\n一键放置：【SHIFT+T】\r\n（使用一键放置前请先详细阅读一键放置面板上的说明。）[/color]\r\n所有快捷键都可以在游戏内的快捷键设置里更改\r\n\r\n[color=#FF0000]【快捷键失效问题】[/color]\r\n如果首次进入游戏时快捷键无法生效，请大退游戏再试一下。因为技术有限，与一些MOD的冲突问题可能暂时无法解决，十分抱歉。\r\n\r\n【自动吃药】\r\nNPC没有对应BUFF的时候，自动寻找并使用对应道具。\r\n当前设置支持【清心丹】、【极乐丹】、【灵石】、【灵晶】、【黄芽丹】。\r\n如果选中【仅修行时使用】，那么只会在NPC处于修行状态时才会使用。\r\n\r\n【一键换符】\r\n切换NPC身上符咒的激活状态，将未激活的符激活，将已激活的符咒去掉激活，实现一键换符。\r\n\r\n【自动治疗真气溢伤】\r\n选中后，如果NPC身上有真气溢伤（灵类伤害），将自动寻找通脉散并使用。\r\n\r\n【自动修练】\r\n可以设置【自动修行调心】和【自动练功调心】\r\nNPC心境低于设定下限时调心，心境高于设定上限时修行或练功。",
-	"Author": "Catnip",
+	"Desc": "[Author | 作者]\r\nJai, 懒惰夫斯基(Lazy Fusky)\r\n\r\n[Translator | 翻译者]\r\nJai, Kanna~Chan[简介]\r\n\r\n[Other Contributors | 其他贡献者]Akira, Japlay\r\n\r\n[Main Features | 主要功能]\r\n1. Automate cultivation for inner disciples\r\n  - Automate switching between cultivation (Practice or Train mode) and recovery (Mind mode), based on Mental State\r\n  - Can be configured to automatically consume elixirs, spirit stones and spirit crystals\r\n    - Can be configured to consume only during cultivation\r\n2. One-Click toggle for equipping/unequipping talismans for the currently selected disciple\r\n  - Note: Not very useful without hotkey\r\n3. One-Click placement/removal of items onto/from displays\r\n  - Used mainly for Manual Qi Bursting\r\n4. Toggle the automatic equipping and unequipping of Mental State boosting talismans for enhanced cultivation to recovery ratio\r\n  - Note: The status is currently only visible in the explanation / instruction pop-up\r\n5. Automatically treat injuries with "Spirit" tag\r\n6. Automatically collect and send artifacts to Sword Shield building\r\n\r\n1. 内门弟子修炼的自动化\r\n  - 自动在修炼（修行或练功模式）与心境回复（调心模式）间循环\r\n  - 可被设置成自动服用丹药、灵石以及灵晶\r\n    - 可选是否只在修炼中自动服用\r\n2. 一键转换已选中弟子的已激活和非激活的符咒\r\n  - 注：用快捷键才会好用\r\n3. 一键在/从置物台置放和丢下物品\r\n  - 主要用于手动爆发灵气\r\n4. 开/关自动管理能提升心境的符咒的激活状态，来整体提升修炼和心境恢复的效率\r\n  - 注：此功能的开关状态只在面板中的说明里显示\r\n5. 自动治疗拥有“灵“标签的伤\r\n6. 自动收集及回归法宝到剑阵中\r\n\r\n[Known Issues | 已知问题]\r\n1. The panels (as well as the controls on them) are pretty small and it could be challenging to configure settings on the panels\r\n2. Tooltip (i.e. pop-up) that can explain what certain settings do are now disabled - those are supposed to show upon hovering the mouse over the setting, but since most people don't have a mouse while playing on the mobile version of the game, the only way to activate the tooltip is to tap on the setting, which conflicts with the selection of the checkboxes\r\n3. Some tooltips are retained because they are not on a setting. However, the default pop-up is pretty small, which are truncating away long instruction texts\r\n\r\n1. 面板以及里头的全部东西都挺小的，导致对设置造成一定挑战\r\n2. 暂时去除一些输入框的提示框 - 那原本是用于解释一些输入框的作用，但是因为手游版没有滑鼠，导致提示框只能在点击时打开，和输入框起了冲突\r\n3. 保留了一些和输入框无关的提示框。但是，由于系统生成的提示框尺寸偏小，导致较长的说明文本被截断",
+	"Author": "Jai, 懒惰夫斯基(Lazy Fusky)",
 	"UIPackage": "UI/MMHWindow",
-	"ID": "3555473146",
-	"Flag": -422811078,
-	"Tags": ["Function","Usability","Integrated","ExcludeRealmsHeaven","Non-Chinese"],
-	"IncreasedDesc": "[color=#FF0000]【MOD修改说明】\n\n自动修行调心仅显示内门弟子\n\n修复一键放置不生效问题\n\n可以从乾坤界拿取药物[/color]",
-	"IsInsideCreat": false,
-	"Previews": [],
-	"ParentModInfo": null
+	"Tags": ["Function","Usability","Integrated"],
+	"Dependencies": ["https://github.com/Jai-ACS/Mod-HotkeyAdapter"]
 }
