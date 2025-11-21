@@ -36,7 +36,6 @@ function MakeMeHappy:registerWithAdapter()
 	Adapter:register(XT("极乐世界"), XT("一键换符"),
 		function()
 			local MMHWindow = self:GetMMHWindow()
-			MMHWindow:Show()
 			MMHWindow:ChangeFu()
 		end
 	)
@@ -49,7 +48,6 @@ function MakeMeHappy:registerWithAdapter()
 	Adapter:register(XT("极乐世界"), XT("开/关心境符管理"),
 		function()
 			local MMHWindow = self:GetMMHWindow()
-			MMHWindow:Show()
 			MMHWindow:ToggleMindFromFu()
 		end
 	)
@@ -207,6 +205,7 @@ function MakeMeHappy:GetPutItemWindow()
 	until window
 	return window
 end
+
 
 
 
