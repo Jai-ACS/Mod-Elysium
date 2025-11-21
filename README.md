@@ -29,7 +29,7 @@ Other than that, this mobile port also:
 5. Automatically treat injuries with "Spirit" tag
 6. Automatically collect and send artifacts to Sword Shield building
 
-## Issues
+## Known Issues
 1. The panels (as well as the controls on them) are pretty small and it could be challenging to configure settings on the panels
 2. Tooltip (i.e. pop-up) that can explain what certain settings do are now disabled - those are supposed to show upon hovering the mouse over the setting, but since most people don't have a mouse while playing on the mobile version of the game, the only way to activate the tooltip is to tap on the setting, which conflicts with the selection of the checkboxes
 3. Some tooltips are retained because they are not on a setting. However, the default pop-up is pretty small, which are truncating away long instruction texts
