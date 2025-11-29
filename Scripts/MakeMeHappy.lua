@@ -19,6 +19,9 @@ function MakeMeHappy:OnInit()
     local PutItemWindow = self:GetPutItemWindow()
     PutItemWindow:SetPlan(SaveData.MakeMeHappy_Plan)
 
+	if (MultiLanguage ~= nil) then
+		MultiLanguage:Load("MakeMeHappy")
+	end
 	self:registerWithAdapter()
 end
 
@@ -205,6 +208,7 @@ function MakeMeHappy:GetPutItemWindow()
 	until window
 	return window
 end
+
 
 
 
